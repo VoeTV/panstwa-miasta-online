@@ -1,14 +1,14 @@
 {
   "name": "panstwa-miasta-online",
   "version": "1.0.0",
-  "description": "Państwa i Miasta Online - Multiplayer game with real-time rooms",
+  "description": "Panstwa i Miasta Online - Multiplayer game with real-time rooms",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "tsx watch server/index.ts",
     "dev:client": "vite",
     "build": "npm run build:server && npm run build:client",
-    "build:server": "tsc --project tsconfig.server.json",
+    "build:server": "node build-server.mjs",
     "build:client": "vite build",
     "start": "node dist/server/index.js",
     "generate-sfx": "node generate-sfx.mjs"
@@ -26,6 +26,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
     "concurrently": "^8.2.2",
+    "esbuild": "^0.19.12",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
