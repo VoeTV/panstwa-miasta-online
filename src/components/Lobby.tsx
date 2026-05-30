@@ -36,20 +36,20 @@ export function Lobby({ room, socket }: Props) {
                   <div className="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-sm font-bold">{player.name[0].toUpperCase()}</div>
                   <span className="font-medium">{player.name}</span>
                 </div>
-                {player.isHost && <span className="text-xs bg-game-accent/20 text-game-accent px-2 py-1 rounded-full font-semibold">\ud83d\udc51 Host</span>}
+                {player.isHost && <span className="text-xs bg-game-accent/20 text-game-accent px-2 py-1 rounded-full font-semibold">👑 Host</span>}
               </div>
             ))}
           </div>
         </div>
 
         <div className="text-center space-y-3">
-          <div className="text-sm text-gray-400">{room.maxRounds} rund \u2022 {room.timePerRound}s na rund\u0119 \u2022 {room.categories.length} kategorii</div>
+          <div className="text-sm text-gray-400">{room.maxRounds} rund • {room.timePerRound}s na rundę • {room.categories.length} kategorii</div>
           {isHost ? (
             <button onClick={handleStart} className="btn-primary w-full text-lg" disabled={room.players.length < 2}>
-              {room.players.length < 2 ? "Czekam na graczy..." : `\ud83c\udfae Rozpocznij gr\u0119 (${room.players.length} graczy)`}
+              {room.players.length < 2 ? "Czekam na graczy..." : `🎮 Rozpocznij grę (${room.players.length} graczy)`}
             </button>
           ) : (
-            <div className="bg-gray-800 rounded-xl p-4"><p className="text-gray-300">Czekam a\u017c host rozpocznie gr\u0119...</p></div>
+            <div className="bg-gray-800 rounded-xl p-4"><p className="text-gray-300">Czekam aż host rozpocznie grę...</p></div>
           )}
         </div>
       </div>
