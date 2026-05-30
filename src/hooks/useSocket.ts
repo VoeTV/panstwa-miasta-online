@@ -4,13 +4,15 @@ import type { ClientToServerEvents, ServerToClientEvents } from "../../shared/ty
 
 type GameSocket = Socket<ServerToClientEvents, ClientToServerEvents>;
 
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || "";
+
 export function useSocket() {
   const socketRef = useRef<GameSocket | null>(null);
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    const socket: GameSocket = io("http://localhost:3001", {
-      transports: ["websocket"],
+    const socket: GameSocket = io(SERVER_URL, {
+      transports: ["websocket", "polling"],
     });
 
     socket.on("connect", () => setIsConnected(true));
