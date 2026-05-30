@@ -58,7 +58,7 @@ export function GameRound({ room, socket, letter, round, timeLeft, stoppedBy }: 
           <p className="text-sm text-gray-400 mb-1">Litera:</p>
           <div className="inline-block bg-primary-600 text-white text-5xl font-bold w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg">{letter}</div>
         </div>
-        {stoppedBy && <div className="mt-3 text-center text-game-accent font-semibold animate-bounce-in">\u26a1 {stoppedBy} klikn\u0105\u0142 STOP!</div>}
+        {stoppedBy && <div className="mt-3 text-center text-game-accent font-semibold animate-bounce-in">⚡ {stoppedBy} kliknął STOP!</div>}
       </div>
 
       <div className="card">
@@ -80,8 +80,8 @@ export function GameRound({ room, socket, letter, round, timeLeft, stoppedBy }: 
           ))}
         </div>
         <div className="mt-6 text-center">
-          <button onClick={handleStop} className="btn-danger text-lg px-10">\u270b STOP</button>
-          <p className="text-xs text-gray-500 mt-2">Kliknij gdy wype\u0142nisz wszystkie pola</p>
+          <button onClick={handleStop} className="btn-danger text-lg px-10">✋ STOP</button>
+          <p className="text-xs text-gray-500 mt-2">Kliknij gdy wypełnisz wszystkie pola</p>
         </div>
       </div>
     </div>

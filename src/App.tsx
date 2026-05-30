@@ -53,7 +53,7 @@ export function App() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="card text-center">
           <div className="animate-spin w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full mx-auto mb-4" />
-          <p className="text-gray-400">\u0141\u0105czenie z serwerem...</p>
+          <p className="text-gray-400">Łączenie z serwerem...</p>
         </div>
       </div>
     );
@@ -64,7 +64,7 @@ export function App() {
       {error && (
         <div className="fixed top-4 left-1/2 -translate-x-1/2 bg-red-600/90 text-white px-6 py-3 rounded-xl shadow-lg z-50 animate-bounce-in">
           {error}
-          <button onClick={() => setError("")} className="ml-3 font-bold">\u2715</button>
+          <button onClick={() => setError("")} className="ml-3 font-bold">✕</button>
         </div>
       )}
       {screen === "home" && <HomeScreen socket={socket} />}
