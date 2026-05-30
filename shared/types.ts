@@ -67,12 +67,12 @@ export interface ClientToServerEvents {
 }
 
 export const DEFAULT_CATEGORIES = [
-  "Pa\u0144stwo",
+  "Państwo",
   "Miasto",
-  "Imi\u0119",
-  "Zwierz\u0119",
-  "Ro\u015blina",
+  "Imię",
+  "Zwierzę",
+  "Roślina",
   "Rzecz",
 ];
 
-export const POLISH_LETTERS = "ABCDEFGHIJKL\u0141MNOPRSTUWZ\u017b".split("");
+export const POLISH_LETTERS = "ABCDEFGHIJKLŁMNOPRSTUWZŻ".split("");

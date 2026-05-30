@@ -61,22 +61,22 @@ export class GameManager {
     const room = this.rooms.get(code);
 
     if (!room) {
-      socket.emit("room:error", "Pok\u00f3j nie istnieje. Sprawd\u017a kod.");
+      socket.emit("room:error", "Pokój nie istnieje. Sprawdź kod.");
       return;
     }
 
     if (room.state !== "lobby") {
-      socket.emit("room:error", "Gra ju\u017c trwa. Poczekaj na nast\u0119pn\u0105 rund\u0119.");
+      socket.emit("room:error", "Gra już trwa. Poczekaj na następną rundę.");
       return;
     }
 
     if (room.players.length >= 8) {
-      socket.emit("room:error", "Pok\u00f3j jest pe\u0142ny (max 8 graczy).");
+      socket.emit("room:error", "Pokój jest pełny (max 8 graczy).");
       return;
     }
 
     if (room.players.some((p) => p.name === data.playerName)) {
-      socket.emit("room:error", "Gracz o tej nazwie ju\u017c jest w pokoju.");
+      socket.emit("room:error", "Gracz o tej nazwie już jest w pokoju.");
       return;
     }
 
@@ -108,7 +108,7 @@ export class GameManager {
     if (!room || room.hostId !== socket.id) return;
 
     if (room.players.length < 2) {
-      socket.emit("room:error", "Potrzebujesz minimum 2 graczy \u017ceby zacz\u0105\u0107.");
+      socket.emit("room:error", "Potrzebujesz minimum 2 graczy żeby zacząć.");
       return;
     }
 

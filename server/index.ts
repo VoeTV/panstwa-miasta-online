@@ -9,7 +9,7 @@ const httpServer = createServer(app);
 
 const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
   cors: {
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
@@ -52,5 +52,5 @@ io.on("connection", (socket) => {
 const PORT = process.env.PORT || 3001;
 
 httpServer.listen(PORT, () => {
-  console.log(`\ud83c\udfae Pa\u0144stwa i Miasta server running on port ${PORT}`);
+  console.log(`🎮 Państwa i Miasta server running on port ${PORT}`);
 });
